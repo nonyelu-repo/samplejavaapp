@@ -40,14 +40,14 @@ stages {
 	   steps {
               withDockerRegistry(credentialsId: 'DOCKER_HUB_LOGIN', url: 'https://index.docker.io/v1/') {
                     sh script: 'cd  $WORKSPACE'
-                    sh script: 'docker build --file Dockerfile --tag docker.io/lerndevops/samplejavaapp:$BUILD_NUMBER .'
-                    sh script: 'docker push docker.io/lerndevops/samplejavaapp:$BUILD_NUMBER'
+                    sh script: 'docker build --file Dockerfile --tag docker.io/kelvin5030/dock-kube:$BUILD_NUMBER .'
+                    sh script: 'docker push docker.io/kelvin5030/dock-kube:$BUILD_NUMBER'
               }	
            }		
     }
     stage('Deploy-QA') {
 	    steps {
-		    sh 'ansible-playbook --inventory /tmp/myinv deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
+		    sh 'ansible-playbook --inventory /home/ubuntu/inv deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
 	    }
     }
 }
