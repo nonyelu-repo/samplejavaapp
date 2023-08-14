@@ -47,7 +47,7 @@ stages {
     }
     stage('Deploy-QA') {
 	    steps {
-		    sh 'ansible-playbook --inventory /home/ubuntu/inv deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
+		    sh 'ansible-playbook --inventory /tmp/inv deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
 	    }
     }
 }
