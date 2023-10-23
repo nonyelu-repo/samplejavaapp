@@ -4,7 +4,7 @@ stages {
     stage('compile') {
 	    steps { 
 		    echo 'compiling..'
-		    git url: 'https://github.com/lerndevops/samplejavaapp'
+		    git url: 'https://github.com/nonyelu-repo/samplejavaapp'
 		    sh script: '/opt/maven/bin/mvn compile'
 	    }
     }
