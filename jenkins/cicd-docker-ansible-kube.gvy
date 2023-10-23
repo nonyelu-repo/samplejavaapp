@@ -40,8 +40,8 @@ stages {
 	   steps {
               withDockerRegistry(credentialsId: 'DOCKER_HUB_LOGIN', url: 'https://index.docker.io/v1/') {
                     sh script: 'cd  $WORKSPACE'
-                    sh script: 'docker build --file Dockerfile --tag docker.io/kelvin5030/dock-kube:$BUILD_NUMBER .'
-                    sh script: 'docker push docker.io/kelvin5030/dock-kube:$BUILD_NUMBER'
+                    sh script: 'docker build --file Dockerfile --tag docker.io/kelvin5030/naijaapp:$BUILD_NUMBER .'
+                    sh script: 'docker push docker.io/kelvin5030/naijaapp:$BUILD_NUMBER'
               }	
            }		
     }
